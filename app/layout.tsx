@@ -3,6 +3,7 @@ import ClientOnly from './components/ClientOnly'
 import Navbar from './components/navbar/Navbar'
 import './globals.css'
 import { Nunito } from 'next/font/google'
+import ToasterProvider from './providers/ToasterProvider'
 export const metadata = {
   title: 'Vacation Homes & Condo Rentals - Airbnb - Airbnb',
   description: 'Vacation Homes & Condo Rentals - Airbnb - Airbnb',
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <ToasterProvider/>
           <RegisterModal/>
         <Navbar/>
         </ClientOnly>

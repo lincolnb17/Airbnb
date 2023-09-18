@@ -4,7 +4,7 @@ import {FcGoogle} from "react-icons/fc"
 import { useCallback,useState } from 'react'
 import {
     Field,
-    FieldValue,
+    FieldValues,
     SubmitHandler,
     useForm
 } from 'react-hook-form';
@@ -13,6 +13,8 @@ import useRegisterModal from '../hooks/useRegisteModal';
 import axios from 'axios';
 import Modal from './Modal';
 import Heading from '../Heading';
+import Input from '../inputs/Input';
+import toast from 'react-hot-toast';
 
 
 const RegisterModal = () => {
@@ -24,21 +26,21 @@ const RegisterModal = () => {
         formState:{
             errors,
         } 
-    }= useForm <FiledValue>({
+    }= useForm <FieldValues>({
         defaultValues:{
             name:'',
             email:'',
             password:''
         }
     });
-    const onSubmit: SubmitHandler<FieldValue>= (data)=>{
+    const onSubmit: SubmitHandler<FieldValues>= (data)=>{
         setIsLoading(true);
         axios.post('api/register',data)
         .then(()=>{
-            RegisterModal.onClose();
+            registerModal.onClose();
         })
         .catch((error)=>{
-            console.log(error)
+            toast.error('Something went wrong')
 
         })
         .finally(()=>{
@@ -50,6 +52,31 @@ const RegisterModal = () => {
         <Heading
           title="Welcome to Airbnb"
           subtitle="Create an account!"
+        />
+        <Input
+        id='email'
+        label='Email'
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+        />
+        <Input
+        id='name'
+        label='Name'
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+        />
+        <Input
+        id='password'
+        label='Password'
+        type="password"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
         />
         
       </div>    
