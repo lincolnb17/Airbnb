@@ -1,12 +1,13 @@
 'use client';
 import {AiOutlineMenu} from 'react-icons/ai'
 import Avatar from '../Avatar';
+import { signOut } from "next-auth/react";
 import { useCallback, useState } from 'react';
 import MenuItems from './MenuItems';
 import useRegisterModal from '../hooks/useRegisteModal';
 import useLoginModal from '../hooks/useLoginModal';
-import { signOut } from 'next-auth/react';
 import { SafeUser } from '@/app/types';
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps{
     currentUser?: SafeUser | null ;
@@ -69,7 +70,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             >
                 <AiOutlineMenu/>
                 <div className='hidden md:block'>
-                    <Avatar/>
+                    <Avatar src={currentUser?.image}/>
                 </div>
 
             </div>
@@ -98,7 +99,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 <MenuItems onClick={()=>{}} label='My properties'/>
                 <MenuItems onClick={()=>{}} label='Airbnb my home'/>
                 <hr/>
-                <MenuItems onClick={()=>{signOut}} label='Logout'/>
+                <MenuItems onClick={()=>{signOut()}} label='Logout'/>
 
                 </>
 
