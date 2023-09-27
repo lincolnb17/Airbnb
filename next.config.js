@@ -10,7 +10,8 @@ const nextConfig = {
             "res.cloudinary.com"
             
         ]
-    }
+    },
+    swcMinify: true,
 }
 
 module.exports = nextConfig

@@ -22,27 +22,27 @@ export const categories = [
     {
         label:'Modern',
         icon:MdOutlineVilla,
-        descrption:'This property is modern'
+        description:'This property is modern'
     },
     {
         label:'Countryside',
         icon:TbMountain,
-        descrption:'This property is in countryside!'
+        description:'This property is in countryside!'
     },
     {
         label:'Pools',
         icon:TbPool,
-        descrption:'This property has a pool'
+        description:'This property has a pool'
     },
     {
         label:'Islands',
         icon:GiIsland,
-        descrption:'This property is on an island!'
+        description:'This property is on an island!'
     },
     {
         label:'Lake',
         icon:GiBoatFishing,
-        descrption:'This property is close to a lake'
+        description:'This property is close to a lake'
     },
     {
         label:'Skiing',
@@ -52,22 +52,22 @@ export const categories = [
     {
         label:'Castles',
         icon:GiCastle,
-        descrption:'This property is in a castle!'
+        description:'This property is in a castle!'
     },
     {
         label:'Camping',
         icon:GiForestCamp,
-        descrption:'This property has a camping activities!'
+        description:'This property has a camping activities!'
     },
     {
         label:'Arctic',
         icon:BsSnow,
-        descrption:'This property is modern'
+        description:'This property is modern'
     },
     {
         label:'Cave',
         icon:GiCaveEntrance,
-        descrption:'This property is in a cave!'
+        description:'This property is in a cave!'
     },
     {
         label:'Desert',
@@ -77,12 +77,12 @@ export const categories = [
     {
         label:'Barns',
         icon:GiBarn,
-        descrption:'This property is  in the barn!'
+        description:'This property is  in the barn!'
     },
     {
         label:'Lux',
         icon:IoDiamond,
-        descrption:'This property is luxurious!'
+        description:'This property is luxurious!'
     },
 
 
