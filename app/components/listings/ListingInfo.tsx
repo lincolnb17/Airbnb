@@ -51,7 +51,7 @@ const ListingInfo:React.FC<ListingInfoProps> = ({
             items-center
             gap-2
             ">
-                <div> Hosted by{user?.name}</div>
+                <div> Hosted by {user?.name}</div>
                 <Avatar src={user?.image}/>
             </div>
             <div className="

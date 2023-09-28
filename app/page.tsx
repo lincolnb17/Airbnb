@@ -7,6 +7,7 @@ import ListingCard from "./components/listings/ListingCard";
 
 export default async function Home() {
   const listing = await getListings();
+
   const currentUser = await getCurrentUser();
   if(listing.length==0){
     return(
